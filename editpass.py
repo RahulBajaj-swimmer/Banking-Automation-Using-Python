@@ -64,6 +64,10 @@ class Password:
         if pwd == "" or cpwd == "":
             messagebox.showerror('Info', 'Cannot be empty')
 
+        elif len(pwd) <= 5:
+            messagebox.showerror('Info', 'Password should be atleast 6 characters long!!')
+
+
         else:
             if pwd == cpwd:
                 self.cursor.execute('update tbadmin set admpwd = %s where admid = %s', (pwd, self.admid))
