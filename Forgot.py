@@ -111,6 +111,10 @@ class Forgot_Class:
         pwd = self.Entry3.get()
         cpwd = self.Entry4.get()
         if(pwd == cpwd):
+         if len(pwd) <= 5:
+            messagebox.showerror('Info','Password should be of atleast 6 characters!')
+         else:
+
             con = pymysql.connect(host='localhost', user='root', password='root', db='dbbank')
             cursor = con.cursor()        
             aid = self.Entry1.get()
